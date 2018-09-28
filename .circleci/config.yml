@@ -51,5 +51,5 @@ jobs:
             jupyter-nbconvert --execute task1/*.ipynb
       - store_artifacts:
           path: task1
-          destination: task1
+          destination: task1/artifacts
           
