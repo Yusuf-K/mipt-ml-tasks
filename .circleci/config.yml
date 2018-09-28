@@ -48,7 +48,7 @@ jobs:
           name: #run tests
           command: |
             . venv/bin/activate
-			jupyter-nbconvert --execute task1/*.ipynb
+            jupyter-nbconvert --execute task1/*.ipynb
       - store_artifacts:
           path: test-reports
           destination: test-reports
