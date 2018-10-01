@@ -50,6 +50,6 @@ jobs:
             . venv/bin/activate
             jupyter-nbconvert --execute task1/*.ipynb
       - store_artifacts:
-          path: task1/*.html
+          path: task1/Task 1. Reproduce any pic from scikit learn website.html
           destination: task1/artifacts
           
