@@ -50,6 +50,6 @@ jobs:
             . venv/bin/activate
             jupyter-nbconvert --execute task1/*.ipynb
       - store_artifacts:
-          path: task1
+          path: task1/*.html
           destination: task1/artifacts
           
