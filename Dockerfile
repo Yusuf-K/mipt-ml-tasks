@@ -1,7 +1,7 @@
 FROM python:3.7
 
 RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache-dir notebook==5.*
+    pip install --no-cache notebook
 
 ARG NB_USER
 ARG NB_UID
