@@ -1,11 +1,12 @@
-FROM python:3.7
+FROM python:3.7-slim
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache --upgrade pip && \
+    pip install --no-cache notebook
 
-RUN pip install --no-cache-dir notebook==5.*
+ARG NB_USER
+ARG NB_UID
 
-ENV NB_USER yusufkhu
-ENV NB_UID 1000
+ENV USER ${NB_USER}
 ENV HOME /home/${NB_USER}
 
 RUN adduser --disabled-password \
@@ -13,9 +14,11 @@ RUN adduser --disabled-password \
     --uid ${NB_UID} \
     ${NB_USER}
 
-COPY . ${HOME}
-USER root
-RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
+WORKDIR ${HOME}
+ADD task1 task1
+
+RUN python3 -m venv venv && . venv/bin/activate
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
