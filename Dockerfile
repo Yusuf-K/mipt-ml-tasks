@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.7-slim
 
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook
@@ -16,9 +16,6 @@ RUN adduser --disabled-password \
 
 WORKDIR ${HOME}
 COPY . ${HOME}
-USER root
-RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
 
 RUN python3 -m venv venv && . venv/bin/activate
 ADD requirements.txt requirements.txt
