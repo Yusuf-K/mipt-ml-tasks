@@ -19,6 +19,6 @@ ADD task1 task1
 
 RUN python3 -m venv venv && . venv/bin/activate
 ADD requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
