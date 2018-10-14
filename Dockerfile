@@ -15,7 +15,7 @@ RUN adduser --disabled-password \
     ${NB_USER}
 
 WORKDIR ${HOME}
-COPY . ${HOME}
+ADD task1 task1
 
 RUN python3 -m venv venv && . venv/bin/activate
 ADD requirements.txt requirements.txt
