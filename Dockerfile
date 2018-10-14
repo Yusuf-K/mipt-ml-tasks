@@ -21,3 +21,4 @@ RUN python3 -m venv venv && . venv/bin/activate
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
