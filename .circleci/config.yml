@@ -34,4 +34,4 @@ jobs:
             . venv/bin/activate
             kaggle competitions download titanic
             jupyter nbconvert --execute task2/eda-base-solution.ipynb
-            kaggle competitions submit titanic -f submit.csv -m "submission_from_circle_ci"
+            kaggle competitions submit titanic -f task2/submit.csv -m "submission_from_circle_ci"
