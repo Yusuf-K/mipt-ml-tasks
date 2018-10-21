@@ -35,4 +35,4 @@ jobs:
             kaggle competitions download titanic
             cd task2
             jupyter nbconvert --execute eda-base-solution.ipynb
-            kaggle competitions submit titanic -f submit.csv -m "submission_from_circle_ci"
+            kaggle competitions submit titanic -f submission.csv -m "submission_from_circle_ci"
