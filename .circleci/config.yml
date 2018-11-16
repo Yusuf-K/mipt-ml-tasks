@@ -37,4 +37,4 @@ jobs:
             cd task2
             jupyter nbconvert --execute eda-base-solution.ipynb
             kaggle competitions submit titanic -f submission.csv -m "submission_from_circle_ci"
-            export $OSF_PASSWORD osf -p x783r upload submission.csv osfstorage/Khudayberdiev/submissionOsf.csv
+            export $OSF_PASSWORD osf -p x783r upload submissionOsf.csv osfstorage/Khudayberdiev/submissionOsf.csv
