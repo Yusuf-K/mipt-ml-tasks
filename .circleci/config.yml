@@ -23,6 +23,7 @@ jobs:
             pip install kaggle
             mkdir ~/.kaggle
             echo $kaggle_api > ~/.kaggle/kaggle.json
+            pip install osfclient
       - save_cache:
           paths:
             - ./venv
@@ -36,3 +37,4 @@ jobs:
             cd task2
             jupyter nbconvert --execute eda-base-solution.ipynb
             kaggle competitions submit titanic -f submission.csv -m "submission_from_circle_ci"
+            export $OSF_PASSWORD osf -p x783r upload submission.csv osfstorage/Khudayberdiev/submissionOsf.csv
